@@ -1,0 +1,34 @@
+#load ggplot2 package 
+#use 'install.packages("ggplot2")' if you do not already have it installed
+library('ggplot2')
+
+#search for an existing dataset
+data()
+#view dataset of interest
+View(ChickWeight)
+#ChickWeight - Weight versus age of chicks on different diets
+
+data <- ChickWeight
+
+
+#first attempt at a graphic
+h<- ggplot(data, aes(x=Diet, y=weight, fill=Diet)) + 
+  geom_bar(position="dodge", stat="identity", alpha=0.7) +
+  ggtitle("How Diet affects the Weight of Chicks")
+h
+
+
+#clean boxplot
+b1 <- ggplot(data, aes(x=Diet, y=weight, col=Diet)) +
+  geom_boxplot(fill=c('#FE652F60','#04B55E60','#01BFFE60','#D358F760')) +
+  ggtitle("Diet vs Weight in Chicks")
+
+b1
+
+#most info boxplot
+b2 <- ggplot(data, aes(x=Diet, y=weight,col=Diet)) +
+  geom_boxplot(fill=c('#FE652F60','#04B55E60','#01BFFE60','#D358F760'), outlier.colour="blue", outlier.shape=8, outlier.alpha = .6) +
+  geom_jitter(shape=16, position=position_jitter(0.2),size=0.5, alpha=0.3) +
+  ggtitle("Diet vs Weight in Chicks")
+
+b2
