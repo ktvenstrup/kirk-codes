@@ -1,0 +1,35 @@
+#search for an existing dataset
+data()
+#view dataset of interest
+View(CO2)
+#CO2 - Carbon Dioxide Uptake in Grass Plants
+data <- CO2
+str(CO2)
+
+install.packages('sloop')
+library('sloop')
+
+otype(data)
+
+#create S3 object
+
+#I am just going to make a list as this is one of the simplest forms of an S3 object
+s3 <- list(species = "Rhino", name = "Frank", age = 13, speed = 4)
+class(s3) <- "animal"
+typeof(s3)
+otype(s3)
+
+#create S4 object
+
+#similar idea as the last object I created
+setClass("animal", slots=list(species = "character", name = "character", age = "numeric", speed = "numeric"))
+#see how I have to set up a lot more structure?
+s4 <- new("animal",species = "Giraffe", name = "Greg", age = 24, speed = 10)
+s4
+typeof(s4)
+otype(s4)
+
+#testing our types again
+isS4(s4)
+isS4(s3)
+#worked!
