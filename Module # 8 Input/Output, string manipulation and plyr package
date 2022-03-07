@@ -1,0 +1,18 @@
+#import dataset
+x <- read.table("Assignment 6 Dataset.txt", header = TRUE, sep = ",")
+
+#install.packages("plyr"
+library('plyr')
+
+#take the mean of the grades and split by gender
+y <- ddply(x, "Sex", transform, Grade.Average = mean(Grade))
+
+#write this new sorted information to a file
+#write.table(y, "Sorted_Average")
+write.table(y, "Sorted_Average", sep = ",")
+
+#create a new list of names containing "I" or "i"
+newx <- subset(x, grepl("[iI]", x$Name))
+
+#write this to a new file
+write.table(newx, "DataSubset", sep = ",")
