@@ -1,0 +1,15 @@
+Package: kirkspackage
+Title: Chess Rules and Board
+Version: 0.0.0.9000
+Authors@R: "Kirk", "Tvenstrup", "ktvenstrup@usf.edu", role = c("aut", "cre")
+Description: This package is designed to help you learn about chess and to visualize or 
+  simulate movements. It tells the user about the pieces, the board, and allows the user to 
+  explore different chess movements. For pieces, it lists the name, movement, points 
+  associated with it (to communicate its value), and the number of that piece on the board. 
+  The package also contains a graph of a chess board to show chess board notation.
+Depends: R (>= 3.1.2)
+License: use_mit_license()`, `use_gpl3_license()
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+LazyData: true
