@@ -1,0 +1,71 @@
+#Few notes.
+#1. Install the following packages: "CarletonStats", "devtools", "epanetReader", "fmsb", "ggplot2", "ggthemes","latticeExtra", "MASS", "PerformanceAnalytics", "psych", and "plyr" 
+
+#install most recent RStudio version
+#install.packages("installr")
+library('installr')
+#updateR()
+
+install.packages(c("CarletonStats", "devtools", "epanetReader", 
+          "fmsb", "ggplot2", "ggthemes","latticeExtra", "MASS", 
+          "PerformanceAnalytics", "psych", "plyr", "prettyR", 
+          "plotrix", "proto", "RCurl", "reshape", "reshape2"))
+
+
+#2. Run those packages in the background
+
+library('CarletonStats')
+library('devtools')
+library('epanetReader')
+library('fmsb')
+library('ggplot2')
+library('ggthemes')
+library('latticeExtra')
+library('MASS')
+library('PerformanceAnalytics')
+library('psych')
+library('plyr')
+library('prettyR')
+library('plotrix')
+library('proto')
+library('RCurl')
+library('reshape')
+library('reshape2')
+
+
+#3. Warning and conflict with your current RStudio version.
+
+#None
+#I had updated my current version of RStudio to 4.1.3
+
+
+#4. The code
+
+
+library('lattice')
+
+
+#Dot-dash plot in lattice
+
+x <- mtcars$wt
+y <- mtcars$mpg
+xyplot(y ~ x, xlab="Car weight (lb/1000)", ylab="Miles per gallon of fuel",
+       par.settings = list(axis.line = list(col="transparent")),
+       panel = function(x, y,...) { 
+         panel.xyplot(x, y, col=1, pch=16)
+         panel.rug(x, y, col=1, x.units = rep("snpc", 2), y.units = rep("snpc", 2), ...)})
+
+
+
+#my own personal dot-dash in lattice
+
+dotdash <- xyplot(y ~ x, xlab="Car weight (lb/1000)", ylab="Miles per gallon of fuel",
+       par.settings = list(axis.line = list(col="cornflowerblue")),
+       main = "Dot-dash plot in lattice", panel = function(x, y,...) { 
+         panel.xyplot(x, y, col=6, pch=1)
+         panel.rug(x, y, col=3, x.units = rep("snpc", 2), y.units = rep("snpc", 2), ...)})
+dotdash
+
+#my wordpress blog post for this week: 
+
+#https://advancedstatswithkirk.wordpress.com/2022/04/04/visual-analytics-module-11/
