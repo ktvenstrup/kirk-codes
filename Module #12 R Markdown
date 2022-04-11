@@ -1,0 +1,62 @@
+---
+title: "Chess Package Info"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Intro to Chess Rules and Board
+
+Chess Rules and Board is the official title of the package named kirkspackage. This package is designed to help you learn about chess by exploring pieces, the board, and visualizing movement. It tells the user about the pieces by listing the name, beginning notation, movement, points associated with it (to communicate its value), and the number of that piece on the board. This package also contains a graph of a chess board to show chess board notation and to show how the pieces can move.
+
+**For your information**
+
+The initial DESCRIPTION File for this package can be found on GitHub using this link:
+
+https://github.com/ktvenstrup/kirk-codes-LIS4370/blob/main/Module%20%2310%20DESCRIPTION%20File
+
+
+## I will load required libraries in this section
+
+```{r libraries}
+#Load required libraries
+
+#install.packages("knitr")
+library('knitr')
+
+```
+
+
+## Create piece list
+
+```{r list}
+#In this area I created a very minimal sample table that I learned from the htmltips.Rmd file we downloaded
+
+chess <- c("King", "Queen", "Bishop", "Knight", "Rook", "Pawn")
+
+kable(chess, caption="**Chess Pieces**")
+
+
+```
+
+
+## Create piece descriptions
+
+```{r pieces}
+#My work will be added to this section
+
+```
+
+
+
+## Create chess board
+
+```{r board}
+#My work will be added to this section
+
+```
+
+
+*Reminder* echo = FALSE` parameter can be added to the code chunk after "r" to prevent printing of the R code that generates the plot
